@@ -106,3 +106,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# 加载自定义别名配置
+
+if [ -d "/home/${USER}/.alias/" ];then
+    source /home/${USER}/.alias/alias-for-docker.alias
+    source /home/${USER}/.alias/alias-for-git.alias
+fi
