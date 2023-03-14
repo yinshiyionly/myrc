@@ -1,0 +1,9 @@
+[init]
+        defaultBranch = master
+[user]
+        email = yinzhengfan@163.com
+        name = yinshiyi-Debian
+[core]
+	editor = vim
+
+
