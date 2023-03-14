@@ -9,3 +9,8 @@ HostName 172.21.0.13
 Port 36222
 User yinji
 IdentityFile ~/.ssh/taido-dev
+
+Host github.com
+HostName github.com
+User git
+IdentityFile ~/.ssh/yinshiyionly-github
