@@ -107,6 +107,30 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+## zsh history setting
+# set history size
+export HISTSIZE=10000
+# set history after logout
+export SAVEHIST=10000
+# set history filename
+export HISTFILE=~/.zsh_history
+# append into history file
+setopt INC_APPEND_HISTORY
+# save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+# add timestamp for each entry
+setopt EXTENDED_HISTORY
+# set history ignore
+export HISTORY_IGNORE="(pwd|ls|ll|history|exit|whoami|w|..|l|h|tree|git)"
+##
+
+## zsh hook setting
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd() { ll; }
+
+
+
+
 # 加载自定义别名配置
 if [ -d "/home/${USER}/.alias/" ];then
     source /home/${USER}/.alias/alias-for-docker.alias
