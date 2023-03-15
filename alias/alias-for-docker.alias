@@ -2,3 +2,12 @@ alias dk='docker'
 alias dkp='docker ps'
 alias dkpa='docker ps -a'
 alias dki='docker images'
+
+
+
+
+
+
+
+# docker compose
+alias dkc='docker compose'

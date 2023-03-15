@@ -108,8 +108,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # 加载自定义别名配置
-
 if [ -d "/home/${USER}/.alias/" ];then
     source /home/${USER}/.alias/alias-for-docker.alias
     source /home/${USER}/.alias/alias-for-git.alias
+fi
+
+# 加载自定义函数
+if [ -d "/home/${USER}/.function/" ];then
+    source /home/${USER}/.function/function-common.sh
 fi
