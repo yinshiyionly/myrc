@@ -114,15 +114,27 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 # set history filename
 export HISTFILE=~/.zsh_history
-# append into history file
+# append into history file 立即更新 history
 setopt INC_APPEND_HISTORY
-# save only one command if 2 common are same and consistent
+# save only one command if 2 common are same and consistent 去重
 setopt HIST_IGNORE_DUPS
 # add timestamp for each entry
 setopt EXTENDED_HISTORY
+# remove blank history record
+setopt HIST_REDUCE_BLANKS
+# skip duplicate history records while browsing
+setopt HIST_FIND_NO_DUPS
+# set history format
+HIST_STAMPS="mm/dd/yyyy"
 # set history ignore
 export HISTORY_IGNORE="(pwd|ls|ll|history|exit|whoami|w|..|l|h|tree|git *|gs)"
 ##
+
+
+## instruction correction 指令更正
+#setopt CORRECT
+#setopt CORRECT_ALL
+
 
 ## zsh hook setting
 autoload -U add-zsh-hook
