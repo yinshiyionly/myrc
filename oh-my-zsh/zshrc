@@ -121,7 +121,7 @@ setopt HIST_IGNORE_DUPS
 # add timestamp for each entry
 setopt EXTENDED_HISTORY
 # set history ignore
-export HISTORY_IGNORE="(pwd|ls|ll|history|exit|whoami|w|..|l|h|tree|git)"
+export HISTORY_IGNORE="(pwd|ls|ll|history|exit|whoami|w|..|l|h|tree|git *|gs)"
 ##
 
 ## zsh hook setting
