@@ -4,7 +4,10 @@
         email = yinzhengfan@163.com
         name = yinshiyi-Debian
 [core]
+	# 指定编辑器
 	editor = vim
+	# 忽略文件权限
+	fileMode = false
 
 [pull]
 	rebase = false
