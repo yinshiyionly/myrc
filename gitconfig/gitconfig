@@ -11,3 +11,6 @@
 
 [pull]
 	rebase = false
+[safe]
+	directory = /home/eleven/Docker-Environment/Web/mini_api
+	directory = *

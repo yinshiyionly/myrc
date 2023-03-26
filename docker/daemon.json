@@ -1,6 +1,8 @@
 {
     "registry-mirrors": [
+	"https://docker.mirrors.tuna.tsinghua.edu.cn",
 	"https://docker.mirrors.ustc.edu.cn",
-	"http://hub-mirror.c.163.com"
+	"http://hub-mirror.c.163.com",
+	"https://docker.mirrors.tuna.tsinghua.edu.cn"
     ]
 }
