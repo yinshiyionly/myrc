@@ -3,6 +3,9 @@
 	"https://docker.mirrors.tuna.tsinghua.edu.cn",
 	"https://docker.mirrors.ustc.edu.cn",
 	"http://hub-mirror.c.163.com",
-	"https://docker.mirrors.tuna.tsinghua.edu.cn"
+	"https://mirror.baiduce.com"
+    ],
+    "default-address-pools": [
+	{"base":"10.10.0.0/16", "size":24}
     ]
 }

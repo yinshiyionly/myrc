@@ -3,7 +3,6 @@ HostName 172.21.0.2
 User git
 IdentityFile ~/.ssh/taido-gitlab
 
-
 Host dev
 HostName 172.21.0.13
 Port 36222
