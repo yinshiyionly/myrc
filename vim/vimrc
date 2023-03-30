@@ -68,3 +68,4 @@ set et
 
 autocmd FileType yaml setlocal ai nu ru ts=2 sw=2 et
 autocmd FileType python setlocal ai nu ru ts=2 sw=2 et
+autocmd FileType nginx setlocal ai nu ru ts=4 sw=4 et
