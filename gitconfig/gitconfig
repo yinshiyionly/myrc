@@ -8,6 +8,8 @@
 	editor = vim
 	# 忽略文件权限
 	fileMode = false
+    #
+    autocrlf = true
 
 [pull]
 	rebase = false
