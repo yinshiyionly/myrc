@@ -147,7 +147,9 @@ export HISTORY_IGNORE="(pwd|ls|ll|history|exit|whoami|w|..|l|h|tree|git *|gs)"
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd() { ll; }
 
-
+# 解决 HOME 和 END 按键失效
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 
 
 # 加载自定义别名配置
