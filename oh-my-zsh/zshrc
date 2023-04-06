@@ -153,18 +153,17 @@ bindkey "^[[4~" end-of-line
 
 
 # 加载自定义别名配置
-if [ -d "~/.alias/" ];then
-    source ~/.alias/alias-for-docker.alias
-    source ~/.alias/alias-for-git.alias
-fi
+[[ ! -d ~/.alias ]] || source ~/.alias/alias-for-git.alias 
+    && source ~/.alias-for-docker.alias
 
 # 加载自定义函数
-if [ -d "~/.function/" ];then
-    source ~/.function/function-common.sh
-fi
+[[ ! -d ~/.function ]] || source ~/.function/function-common.sh
 
 # 加载 powerlevel10k 主题
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# 加载 GOLANG
+[[ ! -d /usr/local/go ]] || export PATH=$PATH:/usr/local/go/bin
