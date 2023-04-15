@@ -153,8 +153,7 @@ bindkey "^[[4~" end-of-line
 
 
 # 加载自定义别名配置
-[[ ! -d ~/.alias ]] || source ~/.alias/alias-for-git.alias 
-    && source ~/.alias-for-docker.alias
+[[ ! -d ~/.alias ]] || source ~/.alias/alias-for-git.alias && source ~/.alias/alias-for-docker.alias
 
 # 加载自定义函数
 [[ ! -d ~/.function ]] || source ~/.function/function-common.sh
