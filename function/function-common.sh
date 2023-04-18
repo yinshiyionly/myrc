@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# unset proxy
 function proxyOff() {
     unset http_proxy
     unset https_proxy
     unset all_proxy
 }
 
+# set proxy $1
 function proxyOn() {
     if [ ! -n  "$1" ];then
         echo "Please input proxy URL"
@@ -20,14 +22,14 @@ function proxyOn() {
 
 # attention: Additional outputt with timezone
 # timestamp to date
-function ttdate() {
+function t2date() {
     echo $(date -d @$1 +"%Y-%m-%d %H:%M:%S")
     echo $(date -d @$1 +"%Y-%m-%d %H:%M:%S %Z")
 }
 
 # attention: Timezone depends on your setting/mmachine
 # date to timestamp
-function datett() {
+function date2t() {
     if [ ! -n "$1" ]; then
         echo $(date +%s)
     else
