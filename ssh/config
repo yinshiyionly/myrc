@@ -13,3 +13,8 @@ Host github.com
 HostName github.com
 User git
 IdentityFile ~/.ssh/yinshiyionly-github
+
+Host tc
+HostName 101.42.137.30
+User ubuntu
+IdentityFile ~/.ssh/ubuntu-tc

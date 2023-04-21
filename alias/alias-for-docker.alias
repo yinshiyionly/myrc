@@ -1,3 +1,4 @@
+# docker
 alias dk='docker'
 alias dkp='docker ps'
 alias dkpa='docker ps -a'
@@ -8,6 +9,15 @@ alias dki='docker images'
 
 
 
-
 # docker compose
 alias dkc='docker compose'
+alias dks='docker compose start'
+alias dkr='docker compose restart'
+alias dkt='docker compose stop'
+
+
+
+
+
+# docker other
+alias dkl='docker logs'

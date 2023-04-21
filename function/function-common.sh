@@ -27,7 +27,7 @@ function t2date() {
     echo $(date -d @$1 +"%Y-%m-%d %H:%M:%S %Z")
 }
 
-# attention: Timezone depends on your setting/mmachine
+# attention: Timezone depends on your setting/machine
 # date to timestamp
 function date2t() {
     if [ ! -n "$1" ]; then
