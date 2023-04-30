@@ -166,3 +166,6 @@ bindkey "^[[4~" end-of-line
 
 # 加载 GOLANG
 [[ ! -d /usr/local/go ]] || export PATH=$PATH:/usr/local/go/bin
+
+# Setting GOLANG ENV
+[[ ! -d /usr/local/go ]] || export GO111MODULE=on || export GOPROXY=https://goproxy.cn

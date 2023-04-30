@@ -1,18 +1,20 @@
 [init]
-        defaultBranch = master
+    # 默认分支名称
+    defaultBranch = master
 [user]
-        email = yinzhengfan@163.com
-        name = yinshiyi-Debian
+    email = yinzhengfan@163.com
+    name = yinshiyi-Debian
 [core]
 	# 指定编辑器
 	editor = vim
 	# 忽略文件权限
 	fileMode = false
-    #
-    autocrlf = true
+    # 提交时转换未 LF，检出时不转换
+	autocrlf = input
 
 [pull]
 	rebase = false
 [safe]
 	directory = /home/eleven/Docker-Environment/Web/mini_api
 	directory = *
+	directory = %(prefix)///wsl$/Debian-dev/home/eleven/Docker-Environment/Web/scrm-api
