@@ -14,5 +14,10 @@
   "dns": [
     "114.114.114.114",
     "8.8.8.8"
-  ]
+  ],
+  "log-driver":"json-file",
+  "log-opts":{
+    "max-size": "500m",
+    "max-file": "3"
+  }
 }
