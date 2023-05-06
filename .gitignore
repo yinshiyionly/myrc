@@ -1,7 +1,25 @@
-.idea/*
-.DS_Store
-.env
+# Ignore the nohup.out
 nohup.out
+
+# Ignore the idea settings
+.idea
+
+# Ignore the DS_Store for macOs
+.DS_Store
+
+# Ignore the Web directory, but retain the Demo subdirectory
+Web
+!Web/Demo
+
+# Ignore the Data directory, but retain the README.md
+Data
+!Data/README.md
+
+# Ignore the Log directory, but retain the README.md
+Log
+!Log/README.md
+
+# Ignore the ssh directory, but retain the config and README.md
 /ssh/*
 !/ssh/config
 !/ssh/README.md
