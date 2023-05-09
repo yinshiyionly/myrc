@@ -77,6 +77,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# 解决 plugins 不存在的问题
+[[ ! -d ~/dev-config/oh-my-zsh/plugins/zsh-autosuggestions ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/plugins)
+
+[[ ! -d ~/dev-config/oh-my-zsh/plugins/zsh-syntax-highlighting ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/plugins)
+
 plugins=(
 	git
 	sudo
@@ -168,4 +174,4 @@ bindkey "^[[4~" end-of-line
 [[ ! -d /usr/local/go ]] || export PATH=$PATH:/usr/local/go/bin
 
 # Setting GOLANG ENV
-[[ ! -d /usr/local/go ]] || export GO111MODULE=on || export GOPROXY=https://goproxy.cn
+[[ ! -d /usr/local/go ]] || export GO111MODULE=on && export GOPROXY=https://goproxy.cn
