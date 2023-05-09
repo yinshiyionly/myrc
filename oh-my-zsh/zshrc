@@ -79,9 +79,10 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 # 解决 plugins 不存在的问题
-[[ ! -d ~/dev-config/oh-my-zsh/plugins/zsh-autosuggestions ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/plugins)
-
-[[ ! -d ~/dev-config/oh-my-zsh/plugins/zsh-syntax-highlighting ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/plugins)
+# 软链接不存在时 执行 ln -s
+[[ -h ~/.oh-my-zsh/plugins/zsh-autosuggestions ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/plugins)
+# 注意：使用的逻辑或符号 `||`，当逻辑或符号前面的操作未通过，才会执行后续的操作
+[[ -h ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/plugins)
 
 plugins=(
 	git
