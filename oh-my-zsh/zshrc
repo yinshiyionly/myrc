@@ -142,22 +142,21 @@ setopt HIST_FIND_NO_DUPS
 HIST_STAMPS="mm/dd/yyyy"
 # set history ignore
 export HISTORY_IGNORE="(pwd|ls|ll|history|exit|whoami|w|..|l|h|tree|git *|gs)"
-##
-
 
 ## instruction correction 指令更正
 #setopt CORRECT
 #setopt CORRECT_ALL
 
-
 ## zsh hook setting
-autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd() { ll; }
+# autoload -U add-zsh-hook
+# add-zsh-hook -Uz chpwd() { ll; }
+
+# cd 后执行 ls
+chpwd() ls -l
 
 # 解决 HOME 和 END 按键失效
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
-
 
 # 加载自定义别名配置
 [[ ! -d ~/.alias ]] || source ~/.alias/alias-for-git.alias && source ~/.alias/alias-for-docker.alias
