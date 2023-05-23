@@ -80,9 +80,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # 解决 plugins 不存在的问题
 # 软链接不存在时 执行 ln -s
-[[ -h ~/.oh-my-zsh/plugins/zsh-autosuggestions ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/plugins)
+[[ -h ~/.oh-my-zsh/plugins/zsh-autosuggestions ]] || (ln -s ~/.myrc/oh-my-zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/plugins)
 # 注意：使用的逻辑或符号 `||`，当逻辑或符号前面的操作未通过，才会执行后续的操作
-[[ -h ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]] || (ln -s ~/dev-config/oh-my-zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/plugins)
+[[ -h ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]] || (ln -s ~/.myrc/oh-my-zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/plugins)
 
 plugins=(
 	git
