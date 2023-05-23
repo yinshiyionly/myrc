@@ -15,9 +15,12 @@ alias dks='docker compose start'
 alias dkr='docker compose restart'
 alias dkt='docker compose stop'
 
-
-
-
-
 # docker other
 alias dkl='docker logs'
+
+# docker container operate
+alias dphp74='docker exec --user root -it dev_php74 /bin/bash'
+alias dopenresty='docker exec --user root -it dev_openresty /bin/bash'
+alias dredis='docker exec --user root -it dev_redis /bin/bash'
+alias dmysql8='docker exec --user root -it dev_mysql8 /bin/bash'
+alias drabbitmq='docker exec --user root -it dev_rabbitmq /bin/bash'
