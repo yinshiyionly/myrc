@@ -2,6 +2,7 @@
 alias dk='docker'
 alias dkp='docker ps'
 alias dkpa='docker ps -a'
+alias dkpaf='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dki='docker images'
 
 
@@ -24,3 +25,4 @@ alias dopenresty='docker exec --user root -it dev_openresty /bin/bash'
 alias dredis='docker exec --user root -it dev_redis /bin/bash'
 alias dmysql8='docker exec --user root -it dev_mysql8 /bin/bash'
 alias drabbitmq='docker exec --user root -it dev_rabbitmq /bin/bash'
+alias dmongodb='docker exec --user root -it dev_mongo /bin/bash'
