@@ -1,5 +1,6 @@
 # docker
 alias dk='docker'
+# show docker container
 alias dkp='docker ps'
 alias dkpa='docker ps -a'
 alias dkpaf='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'

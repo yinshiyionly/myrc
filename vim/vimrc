@@ -58,8 +58,6 @@ set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set enc=utf8
 set fencs=utf8,gbk,gb2312,gb18030
 
-" auto indent
-set ai
 " tabstop
 set ts=4
 " shiftwidth
@@ -69,8 +67,8 @@ set et
 
 " 显示配对括号
 set showmatch
-" 智能缩进
-set si
+" 智能缩进 smartindent
+" set si
 set encoding=utf-8
 " set statusline=%2*%n%m%r%h%w%*\ %f\ %1*[FORMAT=%2*%{&ff}:%{&fenc!=''?&fenc:&enc}%1*]\ [TYPE=%2*%Y%1*]\ [COL=%2*%03v%1*]\ [ROW=%2*%03l%1*/%3*%L(%p%%)%1*]
 " set laststatus=2
@@ -83,18 +81,14 @@ autocmd FileType python setlocal ai nu ru ts=2 sw=2 et
 autocmd FileType nginx setlocal ai nu ru ts=4 sw=4 et
 
 
+" 设置自动缩进
+set autoindent
 
+" 根据文件类型设置不同的缩进
+filetype plugin indent on
 
-
-
-
-
-
-if &term =~ "xterm"
-    " INSERT mode
-    let &t_SI = "\<Esc>[6 q" . "\<Esc>]12;blue\x7"
-    " REPLACE mode
-    let &t_SR = "\<Esc>[3 q" . "\<Esc>]12;black\x7"
-    " NORMAL mode
-    let &t_EI = "\<Esc>[2 q" . "\<Esc>]12;green\x7"
-endif
+" 在大括号换行后自动缩进
+augroup auto_indent
+  autocmd!
+  autocmd FileType * setlocal cinoptions+=:0g0
+augroup END
