@@ -142,6 +142,8 @@ setopt HIST_FIND_NO_DUPS
 HIST_STAMPS="mm/dd/yyyy"
 # set history ignore
 export HISTORY_IGNORE="(pwd|ls|ll|history|exit|whoami|w|..|l|h|tree|git *|gs)"
+# set no_nomatch
+setopt no_nomatch
 
 ## instruction correction 指令更正
 #setopt CORRECT
@@ -175,3 +177,4 @@ bindkey "^[[4~" end-of-line
 
 # Setting GOLANG ENV
 [[ ! -d /usr/local/go ]] || export GO111MODULE=on && export GOPROXY=https://goproxy.cn
+alias docker-compose='docker compose'
