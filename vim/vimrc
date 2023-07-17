@@ -88,7 +88,7 @@ set autoindent
 filetype plugin indent on
 
 " 在大括号换行后自动缩进
-augroup auto_indent
-  autocmd!
-  autocmd FileType * setlocal cinoptions+=:0g0
-augroup END
+" augroup auto_indent
+"  autocmd!
+"  autocmd FileType * setlocal cinoptions+=:0g0
+" augroup END
