@@ -167,5 +167,5 @@ read -p "Please input username: " username
 # create user
 createUser "$username"
 
-colorEchoInfo "Clone myrc project"
-cloneMyrc "/home/$username"
+# colorEchoInfo "Clone myrc project"
+# cloneMyrc "/home/$username"
