@@ -93,9 +93,12 @@ createUser() {
 checkEnv() {
     for item in ${NEED_INSTALLED_SOFTWARE_LIST[@]}; do
         if command -v "$item" >/dev/null 2>&1; then
-            colorEchoSuccess "$item \t\t\t\t installed"
+        # printf "%-25s %s\n"  "${COLOR_RED}This is red text.${COLOR_DEFAULT}\n"
+            # Example: Align multiple columns of text and add color support
+            # printf "\033[1;33m%-15s\033[0m \033[1;35m%-10s\033[0m \033[1;36m%5d\033[0m\n" "张三" "男" 25
+            printf "\033[1;32m%-15s\033[0m \033[1;32m%s\033[0m \n" "$item" "installed"
         else
-            colorEchoError "$item \t\t\t\t uninstall"
+            printf "\033[1;31m%-15s\033[0m \033[1;31m%s\033[0m \n" "$item" "uninstall"
             MISSING_SOFTWARE_LIST+=("$item")
         fi
     done
@@ -132,6 +135,7 @@ checkMissingSoftwareList() {
 
         # check answer
         if [[ "$answer" == "y" || "$answer" == "yes" ]]; then
+            checkUserIsRoot
             colorEchoInfo "Ready install..."
             for item in ${MISSING_SOFTWARE_LIST[@]}; do
                 colorEchoInfo "Installing $item..."
@@ -141,6 +145,13 @@ checkMissingSoftwareList() {
             colorEchoInfo "User quit"
             exit 0
         fi
+    fi
+}
+
+checkUserIsRoot() {
+    if [ $EUID -ne 0 ]; then
+        colorEchoError "The current user is not the root user, please switch to the root user to execute"
+        exit 0
     fi
 }
 
@@ -168,7 +179,7 @@ softLinkItem() {
 
     for key in "${!softLinkList[@]}"; do
     value="${softLinkList[$key]}"
-    if [ -L $value ]; then
+    if [[ ! -L $value ]]; then
         colorEchoInfo "$key exists"
     else
     echo 11
@@ -184,7 +195,7 @@ done
 # check grep sed ssh
 colorEchoInfo "step1: check env"
 checkEnv
-# check Linux Release Ubuntu 或者 Debian
+# check Linux Release Ubuntu or Debian
 colorEchoInfo "step2: check Linux Release"
 checkLinuxRelease
 
