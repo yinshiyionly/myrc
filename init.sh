@@ -53,10 +53,10 @@ checkLinuxRelease() {
     # if release is Ubuntu or Debian
     if [[ "$distro" == "ubuntu" ]]; then
         LINUX_RELEASE="ubuntu"
-        colorEchoSuccess "Release Ubuntu"
+        colorEchoSuccess "Linux release is Ubuntu"
     elif [[ "$distro" == "debian" ]]; then
         LINUX_RELEASE="debian"
-        colorEchoSuccess "Release Debian"
+        colorEchoSuccess "Linux release is Debian"
     else
         colorEchoError "Release not Ubuntu or Debian"
         exit 0
