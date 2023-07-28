@@ -24,8 +24,6 @@ NEED_INSTALLED_SOFTWARE_LIST=(
 MISSING_SOFTWARE_LIST=(
 )
 
-# myrc Git remote repository
-MYRC_GIT_REMOTE_REPOSITORY="https://github.com/yinshiyionly/myrc.git"
 LINUX_RELEASE=""
 
 # info echo
@@ -53,10 +51,10 @@ checkLinuxRelease() {
     # if release is Ubuntu or Debian
     if [[ "$distro" == "ubuntu" ]]; then
         LINUX_RELEASE="ubuntu"
-        colorEchoSuccess "Release Ubuntu"
+        colorEchoSuccess "Linux release is Ubuntu"
     elif [[ "$distro" == "debian" ]]; then
         LINUX_RELEASE="debian"
-        colorEchoSuccess "Release Debian"
+        colorEchoSuccess "Linux release is Debian"
     else
         colorEchoError "Release not Ubuntu or Debian"
         exit 0
@@ -155,12 +153,6 @@ checkUserIsRoot() {
     fi
 }
 
-# clone myrc project
-cloneMyrc() {
-    local path="$1"
-    git clone ${MYRC_GIT_REMOTE_REPOSITORY} $path/.myrc
-}
-
 declare -A softLinkList
 
 softLinkItem() {
@@ -206,9 +198,6 @@ softLinkItem
 
 
 # input user
-#read -p "Please input username: " username
+read -p "Please input username: " username
 # create user
-#createUser "$username"
-
-# colorEchoInfo "Clone myrc project"
-# cloneMyrc "/home/$username"
+createUser "$username"
