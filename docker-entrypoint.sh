@@ -35,29 +35,24 @@ if [ ! -e "$backupSourcesList" ]; then
     echo "Backup completed successfully"
 fi
 
-cat <<EOF >> "$sourcesList"
+cat <<EOF > "$sourcesList"
 Types: deb deb-src
 URIs: http://mirrors.ustc.edu.cn/debian
 Suites: bookworm bookworm-updates
 Components: main
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
-EOF
-
-
-cat <<EOF >> "$sourcesList"
 Types: deb
 URIs: http://mirrors.ustc.edu.cn/debian-security
 Suites: bookworm-security
 Components: main
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
-
 EOF
 
 echo "APT sources replaced successfully."
 
 echo "Updating APT sources"
-#apt update
+apt update
 
 # Install software
 echo "Install autojump, curl, git, ssh, vim, wget, zsh."
@@ -66,3 +61,10 @@ apt install -y autojump curl git ssh vim wget zsh
 echo "Install Docker."
 curl -fsSL https://get.docker.com -o get-docker.sh && bash get-docker.sh
 
+# Add user
+user="eleven"
+useradd -m -p $(echo "123456" | openssl passwd -1 -stdin) $user
+usermod -aG docker $user
+
+echo "user: $user created complete successfully, joined docker group"
+echo "done."
