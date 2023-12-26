@@ -56,7 +56,7 @@ apt update
 
 # Install software
 echo "Install autojump, curl, git, ssh, vim, wget, zsh."
-apt install -y autojump curl git ssh vim wget zsh
+apt install -y autojump curl git ssh sudo vim wget zsh
 
 echo "Install Docker."
 curl -fsSL https://get.docker.com -o get-docker.sh && bash get-docker.sh
@@ -66,5 +66,22 @@ user="eleven"
 useradd -m -p $(echo "123456" | openssl passwd -1 -stdin) $user
 usermod -aG docker $user
 
+usermod -aG sudo $user
+
 echo "user: $user created complete successfully, joined docker group"
-echo "done."
+
+
+echo "Switch user: $user"
+su - $user <<EOF
+    # Now you are in the context of the "eleven" user
+
+    # Clone a Git project (replace with your Git repository URL)
+    git clone https://github.com/yinshiyionly/myrc.git /home/eleven/.myrc
+
+    echo "Git project cloned successfully."
+
+    # You can add any additional commands you want to execute as the "eleven" user here
+
+EOF
+
+echo "done"
