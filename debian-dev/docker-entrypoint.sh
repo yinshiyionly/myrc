@@ -68,14 +68,14 @@ apt update
 info "Install autojump, curl, git, ssh, vim, wget, zsh."
 apt install -y autojump curl git ssh sudo vim wget zsh
 
-# echo "Install Docker."
-# curl -fsSL https://get.docker.com -o get-docker.sh && bash get-docker.sh
+info "Install Docker."
+curl -fsSL https://get.docker.com -o get-docker.sh && bash get-docker.sh
 
 # Add user
 user="eleven"
 useradd -m -p $(echo "123456" | openssl passwd -1 -stdin) ${user}
 
-# usermod -aG docker ${user}
+usermod -aG docker ${user}
 
 usermod -aG sudo ${user}
 
@@ -180,7 +180,7 @@ if command -v zsh > /dev/null 2>&1; then
 
     info "Change ${user} Shell for zsh"
     if id -u ${user} > /dev/null 2>&1; then
-        chsh -s /bin/bash eleven
+        chsh -s /usr/bin/zsh eleven
         info "Shell for user '${user}' changed to zsh"
     else
         error "User '${user}' does not exist"
