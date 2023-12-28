@@ -95,10 +95,23 @@ su - ${user} <<EOF
 
     # Now you are in the context of the "${user}" user
 
+    # Check Git installed
+    info "Check Git intalled"
+    if ! command -v git > /dev/null 2>&1; then
+        error "Git uninstalled"
+        exit 1
+    fi
+
     # Clone a Git project (replace with your Git repository URL)
     info "Git clone https://github.com/yinshiyionly/myrc.git"
     
     git clone https://github.com/yinshiyionly/myrc.git /home/${user}/${project}
+
+    info "Check Project exist"
+    if [ ! -d /home/${user}/${project} ]; then
+        error "${project} not exist"
+        exit 1
+    fi
 
     info "Git project cloned successfully."
 
@@ -180,7 +193,7 @@ if command -v zsh > /dev/null 2>&1; then
 
     info "Change ${user} Shell for zsh"
     if id -u ${user} > /dev/null 2>&1; then
-        chsh -s /usr/bin/zsh eleven
+        chsh -s ${zsh_path} eleven
         info "Shell for user '${user}' changed to zsh"
     else
         error "User '${user}' does not exist"
