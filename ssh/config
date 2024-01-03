@@ -1,20 +1,25 @@
+Host *
+    HostkeyAlgorithms +ssh-rsa
+    PubkeyAcceptedKeyTypes +ssh-rsa
+
+
 Host 172.21.0.2
-HostName 172.21.0.2
-User git
-IdentityFile ~/.ssh/taido-gitlab
+    HostName 172.21.0.2
+    User git
+    IdentityFile /home/eleven/.ssh/taido-gitlab
 
 Host dev
-HostName 172.21.0.13
-Port 36222
-User yinji
-IdentityFile ~/.ssh/taido-dev
+    HostName 172.21.0.13
+    Port 36222
+    User yinji
+    IdentityFile /home/eleven/.ssh/taido-dev
 
 Host github.com
-HostName github.com
-User git
-IdentityFile ~/.ssh/yinshiyionly-github
+    HostName github.com
+    User git
+    IdentityFile /home/eleven/.ssh/yinshiyionly-github
 
 Host tc
-HostName 101.42.137.30
-User ubuntu
-IdentityFile ~/.ssh/ubuntu-tc
+    HostName 101.42.137.30
+    User ubuntu
+    IdentityFile /home/eleven/.ssh/ubuntu-tc
