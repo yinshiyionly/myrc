@@ -1,6 +1,6 @@
 ### 这里是一些别名文件
 
-docker 的别名文件 alias-for-docker.alias
+docker 的别名文件 alias-for-docker.alias  
 git    的别名文件 alias-for-git.alias
 
 ### how to usage
