@@ -178,3 +178,6 @@ bindkey "^[[4~" end-of-line
 # Setting GOLANG ENV
 [[ ! -d /usr/local/go ]] || export GO111MODULE=on && export GOPROXY=https://goproxy.cn
 alias docker-compose='docker compose'
+
+# fixed git log less pagination Chinese garbled code
+export LESSCHARSET=utf-8
