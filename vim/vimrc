@@ -92,3 +92,14 @@ filetype plugin indent on
 "  autocmd!
 "  autocmd FileType * setlocal cinoptions+=:0g0
 " augroup END
+"
+" macOS 下将 Ctrl+A 映射到 Home 键
+if has("mac") || has("macunix") || has("unix")
+    map <C-A> <Home>
+    imap <C-A> <Home>
+    vmap <C-A> <Home>
+    " Ctrl+E 映射到 End 键
+    map <C-E> <End>
+    imap <C-E> <End>
+    vmap <C-E> <End>
+endif
